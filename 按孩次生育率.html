@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 100%; height: 500px;left:6px" id="main">
+
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
+<script>
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+         title: {
+            text: '图8 2003-2015年全国生育情况',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '0%',
+            left: '0%',
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        legend: {
+            data: ['一孩', '二孩', '三孩', '生育率']
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015],
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: '生育率',
+                min: 0,
+                max: 40,
+                interval: 5,
+                axisLabel: {
+                    formatter: '{value} %'
+                }
+            },
+            {
+                type: 'value',
+                name: '',
+                min: 0,
+                max: 40,
+                interval: 50,
+                axisLabel: {
+                    formatter: '{value} %'
+                },
+                show: false
+            }
+        ],
+        series: [
+            {
+                name: '一孩',
+                type: 'bar',
+                color: 'RGB(216,177,212)',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' ‰';
+                    }
+                },
+                data: [26.12, 26.53, 21.68, 23.02, 25.04, 26.22, 24.24, 19.75, 23.38, 22.96, 21.5, 16.43]
+            },
+            {
+                name: '二孩',
+                type: 'bar',
+                color: 'RGB(195,139,191)',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' ‰';
+                    }
+                },
+                data: [10.1, 10.44, 10.9, 10.62, 11.05, 11.18, 10.6, 8.72, 10.92, 11.11, 13.4, 12.3]
+            },
+            {
+                name: '三孩',
+                type: 'bar',
+                color: 'RGB(173,102,169)',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' ‰';
+                    }
+                },
+                data: [1.79, 1.32, 1.85, 1.36, 1.37, 1.43, 1.3, 1.29, 1.58, 1.59, 2.41, 2.21]
+            },
+            {
+                name: '生育率',
+                type: 'line',
+                yAxisIndex: 1,
+                color: 'RGB(128,0,128)',
+                tooltip: {
+                    valueFormatter: function (value) {
+                        return value + ' ‰';
+                    }
+                },
+                data: [38.01, 38.29, 34.44, 34.99, 37.46, 38.83, 36.14, 29.75, 35.89, 35.68, 37.33, 30.93]
+            }
+        ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+</body>
+</html>

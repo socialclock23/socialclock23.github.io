@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历年受教育年限</title>
+  <script src="js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 800px;height: 500px"></div>>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  var data = [
+    [7.87, '1990', 280, 7.87],
+    [6.71, '1995', 170, 6.71],
+    [7.11, '2000', 200, 7.11],
+    [7.83, '2005', 280, 7.83],
+    [8.21, '2010', 300, 8.21],
+    [9.08, '2015', 350, 9.08],
+    [9.91, '2020', 400, 9.91],
+  ];
+  var color = new Array();
+  for (var i in data) {
+    color[i] = data[i][3];
+  }
+  var max = Math.max.apply(null, color);
+  var min = Math.min.apply(null, color);
+  option = {
+    title: {
+      text: '图2 1990-2020年全国平均受教育年限',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '0%',
+            left: '2%',
+        },
+    tooltip: {
+      formatter: function(params) {
+        return params.value[1] + " :<br>" + params.value[0];
+      }
+    },
+    dataRange: {
+      x: 'right',
+      y: 'center',
+      min: min,
+      max: max,
+      color: ['#C4BCF7', '#8E66CA'],
+      calculable: true,
+      formatter: function(value) {
+        return value;
+      }
+    },
+    xAxis: {
+      type: 'value'
+    },
+    yAxis: {
+      type: 'category'
+    },
+    series: [{
+      name: '全国历年受教育年限',
+      type: 'scatter',
+      symbolSize: function(value) {
+        return value[2] / 4;
+      },
+      data: data
+    }]
+  };
+  myChart.setOption(option);
+  </script>
+</body>
+</html>

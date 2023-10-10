@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 1000px;height: 600px"></div>>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        backgroundColor: '#fff',
+        title: {
+            textStyle: {
+                rich: {
+                    a: {
+                        fontSize: 16,
+                        fontWeight: 600,
+                    },
+                },
+            },
+            top: '2%',
+            left: '2%',
+        },
+        title: {
+            text: '图4 2010-2020年本科生读研比例',
+            x: 'center'
+        },
+        legend: {
+            data: [ '读研比例'],
+            textStyle: {
+                align: 'right',
+            },
+            top: '2%',
+            right: '2%',
+        },
+
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        grid: {
+            top: '18%',
+            left: '8%',
+            right: '3%',
+            bottom: '10%',
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisLine: {
+                    show: true,
+                },
+                splitArea: {
+                    // show: true,
+                    color: '#f00',
+                    lineStyle: {
+                        color: '#f00',
+                    },
+                },
+                splitLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    margin: 10,
+                },
+                boundaryGap: false,
+                data: [2010,2011,2012,2013,2014,2015,2016,2017, 2018, 2019, 2020],
+            },
+        ],
+
+        yAxis: [
+            {
+                type: 'value',
+                // min: 0,
+                // max: 140,
+                splitNumber: 4,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#e3e3e3',
+                    },
+                },
+                axisLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    show: true,
+                    margin: 20,
+                    formatter: '{value} %',
+                },
+                axisTick: {
+                    show: false,
+                },
+            },
+        ],
+        series: [
+            {
+                name: '读研比例',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'circle',
+                symbolSize: 12,
+                lineStyle: {
+                    normal: {
+                        color: '#e88f1a',
+                    },
+                },
+                itemStyle: {
+                    color: '#e3984e',
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                },
+                data: [5.37, 5.33, 5.45, 5.44, 5.24, 5.20, 5.19, 6.22, 6.54, 6.74, 7.52],
+            },
+        ],
+    };
+    myChart.setOption(option);
+</script>
+    </body>
+</html>

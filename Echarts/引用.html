@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 400px;height: 100px"></div>>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  var option={
+      title: {
+        text: '逆社会时钟',
+        link: 'https://cn.bing.com/search?q=%E9%80%86%E7%A4%BE%E4%BC%9A%E6%97%B6%E9%92%9F+%E8%B1%86%E7%93%A3&qs=n&form=QBRE&msbsrank=1_2__0&sp=-1&pq=%E9%80%86%E7%A4%BE%E4%BC%9A%E6%97%B6%E9%92%9F+%E8%B1%86%E7%93%A3&sc=2-8&sk=&cvid=4BAFE6A66AD24BFCA1356791E10ADC94&ghsh=0&ghacc=0&ghpl=/s?wd=' + encodeURIComponent('ECharts'),
+        x: 'center',
+        textStyle: {
+          fontSize: 46
+        }
+
+      },
+      backgroundColor: '#F7F7F7',
+      tooltip: {
+        show: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {
+            iconStyle: {
+              normal: {
+                color: '#FFFFFF'
+              }
+            }
+          }
+        }
+      },
+  }
+  myChart.setOption(option);
+</script>
+</body>
+</html>

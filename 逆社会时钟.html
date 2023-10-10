@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>逆社会时钟</title>
+    <link rel="stylesheet" href="css.final.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="nav-header">
+            <p class="navbar-brand font-special">社会时钟：我们将如何度过一生？</p>
+        </div>
+        <ul>
+            <li><a href="教育.html">教育</a></li>
+            <li><a href="就业.html">就业</a></li>
+            <li><a href="婚育.html">婚育</a></li>
+            <li><a href="衰老.html">衰老</a></li>
+            <li><a href="逆社会时钟.html">逆社会时钟</a></li>
+        </ul>
+    </header>
+
+    <div class="slider">
+        <div class="original-image"></div>
+        <input type="range" value="20" max="100">
+    </div>
+
+    <div class="block-content2">
+        <div class="info-content">
+            <p class="text_communist">逆社会时钟的定义</p>
+            <p class="line"></p>
+            <p class="text_content" style="font-size:20px">
+                关于时间的描述有很多。从前，低头种麦，二十四节气是最重要时历，蒸汽机的轰鸣冲破了车马遥遥的年代。时钟飞速，生活被驱赶上了“高强度”的轨道，年龄被划分为一个又一个分区，在社会的洪流中拉扯出了“标准”。<br />
+                但这个社会时钟，时长、内部分区也在逐渐变化。求学的时间被延长，结婚生子的时刻被推迟。休学gap、中年失业、晚年恋爱、银发上班族，停摆、悬浮成为被接受的常态。社会时钟的概念越来越立体，庞大数值变化的背后，是一个又一个鲜活的个体，推开寻常的节拍。<br />
+                在逆社会时钟的勇气中建立自己的时区，豆瓣的逆社会时钟小组最常见的帖子就是“年龄＋计划还来得及吗”。
+            </p>
+        </div>
+        <div class="c12">
+            <img src="豆瓣小组讨论.bmp" alt="" class="info-photo">
+        </div>
+    </div>
+
+    <div style="height: 370px;width: 985px;text-align: center;margin-top:350px;" id="main">
+
+    </div>
+    <p class="p105">图15 豆瓣小组“逆社会时钟”讨论词云图 </p>
+
+    <img src="豆瓣小组词云.png" alt="" class="c100" />
+
+
+
+
+    <div class="block-content3">
+        <div class="info-content3">
+            <p class="text_communist3">逆社会时钟的故事</p>
+            <p class="line3"></p>
+            <p class="text_content3">
+                子璇是24届艺考的一名舞蹈生，今年24岁，由于家人的反对，她选择一个不喜欢的专业读完了本科，进入铁路工作，热爱舞蹈的种子从未离开她的心里，2020年，她患上抑郁症，在心理治疗师的陪伴下，她重获了乐观，决定找回跳舞的梦想，参加艺考。<br />
+                “铁路工作性质的关系，我的班制是一个白班一个夜班休息两天，这么循环。所以我休息的时候都在跳舞，包括白班的晚上，上夜班的白天，下夜班的下午，还有休息的全天，我就这么一直坚持到22年，今年4月份，开始向单位请长假开始全天集训。”<br />
+                贴在脸上的碎发见证了她的每一次舞姿，但在今年五月份的时候，子璇因为一个舞蹈动作导致了髌骨脱位，做了手术，拄拐两个月，一个腿粗一个腿细，只能放弃原定要参加的艺考，但她没有就此放弃，舞蹈基础成了术后恢复的练习，准备参加下一届艺考。<br />
+            </p>
+        </div>
+    </div>
+
+    <div class="last-back">
+        <video src="总结背景视频.mp4" loop autoplay muted></video>
+    </div>
+
+    <div class="scanner3">
+        <div>在各种“应该”的安排、支配中，一代又一代人的人生就像一台被拧紧发条的时钟。</div>
+        <div>年龄就是表盘的刻度，督促人们在每个规定时段完成相应动作。甚至终其一生，都在“赶趟”，慌张匆忙。</div>
+        <div>社会时钟有它存在的合理性，推动社会的不断发展，也为许多人纠偏返航，将流沙般庞大的社会凝聚起来。</div>
+        <div>但我们也应该把握好时间自主性，为自己而活。</div>
+    </div>
+    <script>
+        document.querySelector(".slider input").addEventListener("input",function(){
+        document.querySelector(".original-image").style.width = this.value +
+        "%";
+        });
+    </script>
+
+    <div class="u-back">
+    </div>
+
+    <p class="p22">数据来源：<br />国家统计年鉴<br />中国人口统计年鉴<br />第七次全国人口普查<br />《教育蓝皮书》<br />中国劳动统计年鉴<br />中华人民共和国教育部统计数据<br />豆瓣小组“逆社会时钟”</p>
+    <p class="p23">作者：汪雨霖 王欣蔚 应子珺<br />指导教师：吴小坤<br />2023 华南理工大学新闻与传播学院</p>
+</body>
+</html>

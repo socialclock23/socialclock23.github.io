@@ -1,0 +1,98 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 100%; height: 520px;left:0px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;" id="main" _echarts_instance_="ec_1670845035755"><div style="position: relative; width: 1264px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1896" height="750" style="position: absolute; left: 0px; top: 0px; width: 1264px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(925px, 211px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="font-size:14px;color:#666;font-weight:400;line-height:1;">博士研究生</div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(128,0,128);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产5个及以上</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">6</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(151,62,149);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产4个</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">29</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(173,102,169);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产3个</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">159</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(195,139,191);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产2个</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">6,012</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(216,177,212);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产1个</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">20,478</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:RGB(236,222,233);"></span><span style="font-size:14px;color:#666;font-weight:400;margin-left:2px">活产0个</span><span style="float:right;margin-left:20px;font-size:14px;color:#666;font-weight:900">26,057</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div></div></div>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
+<script>
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+     title: {
+            text: '图9 按受教育程度划分的国民生育情况',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '3%',
+            left: '0%',
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
+        },
+        legend: {},
+        xAxis: [
+            {
+                type: 'category',
+                data: ['未上过学', '学前教育', '小 学', '初 中', '高 中', '大学专科', '大学本科', '硕士研究生', '博士研究生'],
+                axisPointer: {
+                    type: 'shadow'
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '生育5个及以上',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(128,0,128)',
+                data: [37851, 641, 129304, 75669, 8739, 1259, 451, 34, 6]
+            },
+            {
+                name: '生育4个',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(151,62,149)',
+                data: [72709, 1507, 340679, 290707, 40171, 7797, 3221, 248, 29]
+            },
+            {
+                name: '生育3个',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(173,102,169)',
+                data: [201365, 4898, 1264379, 1578630, 260433, 59631, 22087, 1363, 159]
+            },
+            {
+                name: '生育2个',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(195,139,191)',
+                data: [398060, 13261, 3936117, 7780706, 2023766, 914452, 598898, 55148, 6012]
+            },
+            {
+                name: '生育1个',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(216,177,212)',
+                data: [150353, 6702, 1967682, 6378590, 3406608, 2143293, 1705066, 172021, 20478]
+            }, {
+                name: '生育0个',
+                type: 'bar',
+                stack: 'total',
+                color: 'RGB(236,222,233)',
+                data: [66314, 4815, 320703, 2115516, 3222596, 2235795, 2437239, 279122, 26057]
+            }
+        ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+
+</body></html>

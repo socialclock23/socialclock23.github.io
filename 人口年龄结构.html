@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 100%; height: 500px" id="main">
+
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+    var data = {
+        2021: [{'name': '0-14岁', 'value': 17.5}, {'name': '15-64岁', 'value': 68.3}, {'name': '65岁及以上', 'value': 14.2}],
+        2020: [{'name': '0-14岁', 'value': 17.9}, {'name': '15-64岁', 'value': 68.6}, {'name': '65岁及以上', 'value': 13.5}],
+        2019: [{'name': '0-14岁', 'value': 16.8}, {'name': '15-64岁', 'value': 70.6}, {'name': '65岁及以上', 'value': 12.6}],
+        2018: [{'name': '0-14岁', 'value': 16.9}, {'name': '15-64岁', 'value': 71.2}, {'name': '65岁及以上', 'value': 11.9}],
+        2017: [{'name': '0-14岁', 'value': 16.8}, {'name': '15-64岁', 'value': 71.8}, {'name': '65岁及以上', 'value': 11.4}],
+        2016: [{'name': '0-14岁', 'value': 16.7}, {'name': '15-64岁', 'value': 72.5}, {'name': '65岁及以上', 'value': 10.8}],
+        2015: [{'name': '0-14岁', 'value': 16.5}, {'name': '15-64岁', 'value': 73.0}, {'name': '65岁及以上', 'value': 10.5}],
+        2014: [{'name': '0-14岁', 'value': 16.5}, {'name': '15-64岁', 'value': 73.4}, {'name': '65岁及以上', 'value': 10.1}],
+        2013: [{'name': '0-14岁', 'value': 16.4}, {'name': '15-64岁', 'value': 73.9}, {'name': '65岁及以上', 'value': 9.7}],
+        2012: [{'name': '0-14岁', 'value': 16.5}, {'name': '15-64岁', 'value': 74.1}, {'name': '65岁及以上', 'value': 9.4}],
+        2011: [{'name': '0-14岁', 'value': 16.5}, {'name': '15-64岁', 'value': 74.4}, {'name': '65岁及以上', 'value': 9.1}],
+        2010: [{'name': '0-14岁', 'value': 16.6}, {'name': '15-64岁', 'value': 74.5}, {'name': '65岁及以上', 'value': 8.9}],
+        2009: [{'name': '0-14岁', 'value': 18.5}, {'name': '15-64岁', 'value': 73.0}, {'name': '65岁及以上', 'value': 8.5}],
+        2008: [{'name': '0-14岁', 'value': 19.0}, {'name': '15-64岁', 'value': 72.7}, {'name': '65岁及以上', 'value': 8.3}],
+        2007: [{'name': '0-14岁', 'value': 19.4}, {'name': '15-64岁', 'value': 72.5}, {'name': '65岁及以上', 'value': 8.1}],
+        2006: [{'name': '0-14岁', 'value': 19.8}, {'name': '15-64岁', 'value': 72.3}, {'name': '65岁及以上', 'value': 7.9}],
+        2005: [{'name': '0-14岁', 'value': 20.3}, {'name': '15-64岁', 'value': 72.0}, {'name': '65岁及以上', 'value': 7.7}],
+        2004: [{'name': '0-14岁', 'value': 21.5}, {'name': '15-64岁', 'value': 70.9}, {'name': '65岁及以上', 'value': 7.6}],
+        2003: [{'name': '0-14岁', 'value': 22.1}, {'name': '15-64岁', 'value': 70.4}, {'name': '65岁及以上', 'value': 7.5}],
+        2002: [{'name': '0-14岁', 'value': 22.4}, {'name': '15-64岁', 'value': 70.3}, {'name': '65岁及以上', 'value': 7.3}],
+        2001: [{'name': '0-14岁', 'value': 22.5}, {'name': '15-64岁', 'value': 70.4}, {'name': '65岁及以上', 'value': 7.1}],
+        2000: [{'name': '0-14岁', 'value': 22.89}, {'name': '15-64岁', 'value': 70.1}, {'name': '65岁及以上', 'value': 6.96}],
+        1999: [{'name': '0-14岁', 'value': 25.4}, {'name': '15-64岁', 'value': 67.7}, {'name': '65岁及以上', 'value': 6.9}],
+        1998: [{'name': '0-14岁', 'value': 25.7}, {'name': '15-64岁', 'value': 67.6}, {'name': '65岁及以上', 'value': 6.7}],
+        1997: [{'name': '0-14岁', 'value': 25.96}, {'name': '15-64岁', 'value': 67.5}, {'name': '65岁及以上', 'value': 6.54}],
+        1996: [{'name': '0-14岁', 'value': 26.39}, {'name': '15-64岁', 'value': 67.2}, {'name': '65岁及以上', 'value': 6.41}],
+        1995: [{'name': '0-14岁', 'value': 26.6}, {'name': '15-64岁', 'value': 67.2}, {'name': '65岁及以上', 'value': 6.2}],
+        1994: [{'name': '0-14岁', 'value': 27.0}, {'name': '15-64岁', 'value': 66.64}, {'name': '65岁及以上', 'value': 6.36}],
+        1993: [{'name': '0-14岁', 'value': 27.15}, {'name': '15-64岁', 'value': 66.7}, {'name': '65岁及以上', 'value': 6.15}],
+        1992: [{'name': '0-14岁', 'value': 27.6}, {'name': '15-64岁', 'value': 66.24}, {'name': '65岁及以上', 'value': 6.16}],
+        1991: [{'name': '0-14岁', 'value': 27.71}, {'name': '15-64岁', 'value': 66.3}, {'name': '65岁及以上', 'value': 5.99}],
+        1990: [{'name': '0-14岁', 'value': 27.69}, {'name': '15-64岁', 'value': 66.74}, {
+            'name': '65岁及以上',
+            'value': 5.57
+        }],
+        1987: [{'name': '0-14岁', 'value': 28.68}, {'name': '15-64岁', 'value': 65.86}, {'name': '65岁及以上', 'value': 5.4}],
+        1982: [{'name': '0-14岁', 'value': 33.59}, {'name': '15-64岁', 'value': 61.5}, {'name': '65岁及以上', 'value': 4.91}]
+    };
+    var dataStyle = {
+        normal: {
+            label: {show: false},
+            labelLine: {show: false},
+            shadowBlur: 40,
+            shadowColor: 'rgba(40, 40, 40, 0.5)',
+        }
+    };
+    var placeHolderStyle = {
+        normal: {
+            color: 'rgba(0,0,0,0)',
+            label: {show: false},
+            labelLine: {show: false}
+        },
+        emphasis: {
+            color: 'rgba(0,0,0,0)'
+        }
+    };
+    var legendData = ['0-14岁', '15-64岁', '65岁及以上'];
+
+    function getData(data) {
+        // var sortData = data.sort((a, b) => {
+        //     return b.value - a.value
+        // });
+        var res = [];
+        var keys = Object.keys(data)
+        keys.reverse()
+        for (let j = 0; j < Object.keys(data).length; j++) {
+            if (j % 3 == 0) {
+                res.push({
+                    type: 'pie',
+                    clockWise: false, //顺时加载
+                    hoverAnimation: true, //鼠标移入变大
+                    radius: [200 - j * 6, 220 - j * 6],　　　　　　　//radius: [65 - i * 15 + '%', 57 - i * 15 + '%'],
+                    itemStyle: dataStyle,
+                    data: data[keys[j]],
+                    tooltip: {
+                        show: true,
+                        formatter: keys[j] + "<br />{b} : {c} ({d}%)"
+                    },
+                });
+            }
+        }
+        // for (let i = 0; i < data.length; i++) {
+        //     // legendData.push(data[i].name);
+        //     res.push({
+        //         type: 'pie',
+        //         clockWise: false, //顺时加载
+        //         hoverAnimation: false, //鼠标移入变大
+        //         radius: [200 - i * 20, 220 - i * 20],　　　　　　　//radius: [65 - i * 15 + '%', 57 - i * 15 + '%'],
+        //         itemStyle: dataStyle,
+        //         data: [{
+        //             value: 33.59,
+        //             name: '0-14岁'
+        //         }, {
+        //             value: 61.5,
+        //             name: '15-64岁',
+        //
+        //         }, {
+        //             value: 4.91,
+        //             name: '65岁及以上',
+        //
+        //         }]
+        //     });
+        // }
+        return res;
+    }
+
+    option = {
+        // backgroundColor: '#f4f2e3',
+        color: ['RGB(249,243,248)', 'RGB(195,139,191)','RGB(128,0,128)'],
+         title: {
+            text: '图11 1982-2021年全国人口年龄结构',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '0%',
+            left: '0%',
+        },
+        tooltip: {
+            show: true,
+            // formatter: "{b} : {c} ({d}%)"
+        },
+        legend: {
+            data: legendData
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                saveAsImage: {show: true}
+            }
+        },
+        series: getData(data)
+    };
+    option && myChart.setOption(option);
+</script>
+</body>
+</html>

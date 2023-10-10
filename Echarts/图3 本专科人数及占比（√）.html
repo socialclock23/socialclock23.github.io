@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历年本专科人数及占比</title>
+  <script src="js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 940px;height: 500px"></div>>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  var option = {
+      title: {
+          text: '图4 2010-2020年本专科及以上学历结构',
+      },
+    legend: {},
+    tooltip: {
+      showContent: false,
+    },
+    dataset: {
+      source: [
+        ['product', '2010', '2012', '2014', '2016', '2018', '2020'],
+        ['本专科', 93.75, 92.78, 92.48, 92.59,92.57, 91.63],
+        ['硕士', 5.45, 6.46, 6.76, 6.69, 6.68, 7.61],
+        ['博士', 0.80, 0.77, 0.75, 0.72, 0.75, 0.76],
+      ]
+    },
+    xAxis: {type: 'category',
+      triggerEvent: true,
+    },
+    yAxis: {gridIndex: 0},
+    grid: {top: '55%'},
+    series: [
+      {type: 'line', smooth: true, seriesLayoutBy: 'row', symbolSize: 10},
+      {type: 'line', smooth: true, seriesLayoutBy: 'row', symbolSize: 10},
+      {type: 'line', smooth: true, seriesLayoutBy: 'row', symbolSize: 10},
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        label: {
+          formatter: '{b}: {@[2012]} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '2010',
+          tooltip: '2010'
+        }
+      }
+    ]
+  };
+
+  setTimeout(function () {
+    myChart.on('mouseover',function(params){
+
+      if(params.componentType == "xAxis"){
+        let xAxisInfo = params.value;
+        myChart.setOption({
+          series: {
+            id: 'pie',
+            label: {
+              formatter: '{b}: {@[' + xAxisInfo + ']} ({d}%)'
+            },
+            encode: {
+              value: xAxisInfo,
+              tooltip: xAxisInfo
+            }
+          }
+        });
+      }
+      if(params.componentType == "series" && params.seriesType == 'line'){
+        let xAxisInfo = params.value[0];
+        myChart.setOption({
+          series: {
+            id: 'pie',
+            label: {
+              formatter: '{b}: {@[' + xAxisInfo + ']} ({d}%)'
+            },
+            encode: {
+              value: xAxisInfo,
+              tooltip: xAxisInfo
+            }
+          }
+        });
+      }
+      setTimeout(function(){
+        myChart.dispatchAction({
+          type: 'highlight',
+          seriesIndex: 4,
+          dataIndex: params.seriesIndex
+        });
+      },300);
+    });
+
+    myChart.on('mouseout',function(params){
+      myChart.dispatchAction({
+        type: 'downplay',
+        seriesIndex: 4,
+        dataIndex: params.seriesIndex
+      });
+    });
+  },0);
+  myChart.setOption(option);
+</script>
+</body>
+</html>

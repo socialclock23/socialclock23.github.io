@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="echarts.js"></script>
+    <script src="jquery-3.6.1.js"></script>
+</head>
+<body>
+<div id="main" style="width: 540px;height: 290px"></div>>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        title: {
+            text: '图14 1981-2015分性别中国人均寿命图',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '0%',
+            left: '2%',
+        },
+        legend: {
+            data: [ '男','女'],
+            textStyle: {
+                align: 'right',
+            },
+            top: '2%',
+            right: '2%',
+        },
+
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        grid: {
+            top: '18%',
+            left: '8%',
+            right: '3%',
+            bottom: '10%',
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisLine: {
+                    show: true,
+                },
+                splitArea: {
+                    // show: true,
+                    color: '#f00',
+                    lineStyle: {
+                        color: '#f00',
+                    },
+                },
+                splitLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    margin: 10,
+                },
+                boundaryGap: false,
+                data: [1981,1990,2000,2005,2010,2015],
+            },
+        ],
+
+        yAxis: [
+            {
+                type: 'value',
+                // min: 0,
+                // max: 140,
+                splitNumber: 4,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#e3e3e3',
+                    },
+                },
+                axisLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    show: true,
+                    margin: 20,
+                    formatter: '{value} ',
+                },
+                axisTick: {
+                    show: false,
+                },
+            },
+        ],
+        series: [
+            {
+                name: '男',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'circle',
+                symbolSize: 12,
+                lineStyle: {
+                    normal: {
+                        color: '#800080',
+                    },
+                },
+                itemStyle: {
+                    color: '#800080',
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                },
+                data: [66.28,66.84,69.63,70.83,72.38,73.64],
+            },
+            {
+                name: '女',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'circle',
+                symbolSize: 12,
+                lineStyle: {
+                    normal: {
+                        color: '#AD66A9',
+                    },
+                },
+                itemStyle: {
+                    color: '#AD66A9',
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                },
+                data: [69.27,70.47,73.33,75.25,77.37,79.43],
+            },
+        ],
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

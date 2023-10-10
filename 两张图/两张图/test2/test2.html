@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="echarts.js"></script>
+    <script src="jquery-3.6.1.js"></script>
+</head>
+<body>
+<div id="main" style="width: 900px;height: 470px;left:10px;"></div>>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+    
+         title: {
+            text: '图10 1987-2019年全国结婚率与离婚率',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '0%',
+            left: '2%',
+        },
+        legend: {
+            data: [ '结婚率','离婚率'],
+            textStyle: {
+                align: 'right',
+            },
+            top: '2%',
+            right: '2%',
+        },
+
+        tooltip: {
+            trigger: 'axis',
+        },
+
+        grid: {
+            top: '18%',
+            left: '8%',
+            right: '3%',
+            bottom: '10%',
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisLine: {
+                    show: true,
+                },
+                splitArea: {
+                    // show: true,
+                    color: '#f00',
+                    lineStyle: {
+                        color: '#f00',
+                    },
+                },
+                splitLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    margin: 10,
+                },
+                boundaryGap: false,
+                data: [1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017, 2018, 2019, 2020],
+            },
+        ],
+
+        yAxis: [
+            {
+                type: 'value',
+                // min: 0,
+                // max: 140,
+                splitNumber: 4,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#e3e3e3',
+                    },
+                },
+                axisLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    show: true,
+                    margin: 20,
+                    formatter: '{value} %',
+                },
+                axisTick: {
+                    show: false,
+                },
+            },
+        ],
+        series: [
+            {
+                name: '结婚率',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'circle',
+                symbolSize: 12,
+                lineStyle: {
+                    normal: {
+                        color: '#800080',
+                    },
+                },
+                itemStyle: {
+                    color: '#800080',
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                },
+                data: [17.2, 16.6, 16.8, 16.4, 16.5, 16.5, 15.5, 15.6, 15.4, 15.3, 14.7,14.4,14.1,13.4,12.6,12.2,12.6,13.3,12.6,7.19,7.5,8.27,9.1,9.3,9.67,9.8,9.92,9.6,9,8.3,7.7,7.3,6.6,5.8,5.4],
+            },
+            {
+                name: '离婚率',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'circle',
+                symbolSize: 12,
+                lineStyle: {
+                    normal: {
+                        color: '#AD66A9',
+                    },
+                },
+                itemStyle: {
+                    color: '#AD66A9',
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                },
+                data: [1.1,1.2,1.35,1.38,1.43,1.47,1.54,1.64,1.75,1.85,1.94,1.92,1.91,1.91,1.96,1.8,2.1,2.56,2.73,1.46,1.59,1.71,1.85,2,2.13,2.29,2.58,2.7,2.8,3,3.2,3.2,3.4,3.1,2],
+            },
+        ],
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

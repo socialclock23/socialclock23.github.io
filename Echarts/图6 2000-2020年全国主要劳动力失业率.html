@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历年受教育年限</title>
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 970px;height: 500px"></div>>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var data1 = [16.8, 13.6, 14.3, 18.3, 19.2, 22.1, 19.4, 17.1, 18.9, 17.0, 16.5];
+    var data2 = [15.7, 13.2, 13.7, 12.6, 15.8, 14.2, 13.8, 15.8, 15.8, 14.8, 13.4];
+    var data3 = [15.5, 17.2, 16.5, 12.5, 12.9, 10.6, 12.1, 12.8, 12.5, 14.4, 14.5];
+    var data4 = [16.3, 16.7, 15.4, 13.8, 14.0, 12.6, 10.8, 10.2, 10.4, 10.3, 10.6];
+    var data5 = [12.6, 13.3, 14.5, 13.8, 12.3, 12.5, 12.4, 13.7, 12.8, 12.0, 9.7];
+    var data6 = [8.9, 12.0, 11.5, 9.5, 8.7, 10.9, 12.1, 10.9, 11.1, 11.4, 11.9];
+    var xData = ['2000', '2002', '2004', '2006', '2008', '2010', '2012','2014', '2016', '2018', '2020'];
+    var cp = ['20-24', '25-29', '30-34', '35-39', '40-44','45-49'];
+    option = {
+
+        title: {
+            text: '图6 2000-2020年主要劳动力失业率',
+            textStyle: {
+                align: 'center',
+                color: '#110a0a',
+                fontSize: 20,
+            },
+            top: '2%',
+            left: '2%',
+        },
+        grid: {
+            borderWidth: 0,
+            top: '24%',
+            left: '6%',
+            right: '6%',
+            bottom: '10%',
+            textStyle: {
+                color: '#110a0a',
+            },
+        },
+        legend: {
+            top: '13%',
+            textStyle: {
+                fontSize: 20,
+                fontFamily: 'MicrosoftYaHeiUI',
+                color: '#110a0a',
+            },
+        },
+        xAxis: [
+            {
+                type: 'category',
+                axisLine: {
+                    show: true, //隐藏X轴轴线
+                    symbol: ['none', 'arrow'],
+                    lineStyle: {
+                        color: '#110a0a',
+                        width: 1,
+                    },
+                },
+                splitLine: {
+                    show: false,
+                },
+                axisTick: {
+                    show: false,
+                },
+                splitArea: {
+                    show: false,
+                },
+                axisLabel: {
+                    interval: 0,
+                    color: '#110a0a',
+                    fontSize: 20,
+                },
+                data: xData,
+            },
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                splitLine: {
+                    show: true,
+                },
+                axisLine: {
+                    show: true, //隐藏X轴轴线
+                    symbol: ['none', 'arrow'],
+                    lineStyle: {
+                        color: '#110a0a',
+                        width: 1,
+                    },
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLabel: {
+                    interval: 0,
+                    color: '#110a0a',
+                    fontSize: 20,
+                    formatter: (params) => {
+                        return params + '';
+                    },
+                },
+                splitArea: {
+                    show: false,
+                },
+            },
+        ],
+        series: [
+            {
+                name: cp[0],
+                type: 'line',
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false,
+                            position: 'top',
+                            formatter: (params) => {
+                                return params.value + '%';
+                            },
+                            textStyle: {
+                                fontSize: 12,
+                                color: '#110a0a',
+                            },
+                        },
+                        color: 'rgba(255, 196, 53, 1)',
+                        barBorderRadius: 0,
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        width: 4,
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#F0B62A', // 0% 处的颜色
+                                },
+
+                                {
+                                    offset: 1,
+                                    color: '#FFC12B', // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                    },
+                },
+                data: data1,
+            },
+            {
+                name: cp[1],
+                type: 'line',
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false,
+                            position: 'top',
+                            formatter: (params) => {
+                                return params.value + '%';
+                            },
+                            textStyle: {
+                                fontSize: 12,
+                                color: '#110a0a',
+                            },
+                        },
+                        color: '#00CC99',
+                        barBorderRadius: 0,
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        width: 4,
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#00CC99', // 0% 处的颜色
+                                },
+
+                                {
+                                    offset: 1,
+                                    color: '#00CC99', // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                    },
+                },
+                data: data2,
+            },
+            {
+                name: cp[2],
+                type: 'line',
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false,
+                            position: 'top',
+                            formatter: (params) => {
+                                return params.value + '%';
+                            },
+                            textStyle: {
+                                fontSize: 12,
+                                color: '#fff',
+                            },
+                        },
+                        color: '#33CCFF',
+                        barBorderRadius: 0,
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        width: 4,
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#33CCFF', // 0% 处的颜色
+                                },
+
+                                {
+                                    offset: 1,
+                                    color: '#33CCFF', // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                    },
+                },
+                data: data3,
+            },
+            {
+                name: cp[3],
+                type: 'line',
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false,
+                            position: 'top',
+                            formatter: (params) => {
+                                return params.value + '%';
+                            },
+                            textStyle: {
+                                fontSize: 12,
+                                color: '#fff',
+                            },
+                        },
+                        color: '#9933FF',
+                        barBorderRadius: 0,
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        width: 4,
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#9933FF', // 0% 处的颜色
+                                },
+
+                                {
+                                    offset: 1,
+                                    color: '#9933FF', // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                    },
+                },
+                data: data4,
+            },
+            {
+                name: cp[4],
+                type: 'line',
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false,
+                            position: 'top',
+                            formatter: (params) => {
+                                return params.value + '%';
+                            },
+                            textStyle: {
+                                fontSize: 12,
+                                color: '#fff',
+                            },
+                        },
+                        color: '#FF6633',
+                        barBorderRadius: 0,
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        width: 4,
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#FF6633', // 0% 处的颜色
+                                },
+
+                                {
+                                    offset: 1,
+                                    color: '#FF6633', // 100% 处的颜色
+                                },
+                            ],
+                            global: false, // 缺省为 false
+                        },
+                    },
+                },
+                data: data5,
+            },
+        ],
+
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>
